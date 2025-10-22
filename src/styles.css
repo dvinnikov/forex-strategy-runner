@@ -1,0 +1,135 @@
+:root {
+  --bg: #0b0b0c;
+  --panel: #121316;
+  --muted: #9ca3af;
+  --fg: #e5e7eb;
+  --grid: #15161a;
+  --accent: #7c3aed;
+  --green: #10b981;
+  --red: #ef4444;
+  --blue: #38bdf8;
+  --orange: #f97316;
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root { height: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+    Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+}
+
+.app {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "sidebar header"
+    "sidebar main"
+    "sidebar footer";
+  gap: 16px;
+  padding: 16px;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid #1d1f24;
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.header {
+  grid-area: header;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sidebar { grid-area: sidebar; }
+
+.main { grid-area: main; display: grid; gap: 16px; }
+
+.row2 {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 16px;
+}
+
+.footer { grid-area: footer; }
+
+.h1 {
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.2px;
+}
+
+.small { color: var(--muted); font-size: 12px; }
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid #23262d;
+  background: #0f1013;
+}
+
+.btn {
+  appearance: none;
+  background: #ef444422;
+  color: #fff;
+  border: 1px solid #ef4444aa;
+  padding: 8px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.list { display: grid; gap: 8px; }
+
+.strategy {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #1d1f24;
+  border-radius: 12px;
+}
+
+.separator { height: 1px; background: #1d1f24; margin: 12px 0; }
+
+.kv {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.pred {
+  display: grid;
+  gap: 10px;
+}
+
+.pred .chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #0c1411;
+  color: var(--green);
+  border: 1px solid #1d3d33;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.table { width: 100%; border-collapse: collapse; }
+.table th, .table td { padding: 10px; border-bottom: 1px solid #1d1f24; font-size: 14px; }
+.table th { text-align: left; color: var(--muted); font-weight: 500; }
